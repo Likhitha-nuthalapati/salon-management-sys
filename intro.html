@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Glamora</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(to right, purple, violet);
+        color: rgba(255, 255, 255, 0.7);
+        overflow: hidden;
+      }
+      .intro {
+        font-size: 4rem; /* Increased font size */
+        font-weight: normal;
+        font-family: "Luminari", fantasy, "Playfair Display", serif;
+        letter-spacing: 5px;
+        opacity: 0;
+        animation: fadeInOut 3s ease-in-out;
+      }
+      .slogan {
+        font-size: 1.5rem;
+        font-weight: normal;
+        font-family: "Arial", sans-serif;
+        letter-spacing: 2px;
+        font-style: italic;
+        opacity: 0;
+        animation: fadeInOut 3s ease-in-out;
+        margin-top: 20px;
+      }
+      @keyframes fadeInOut {
+        0% {
+          opacity: 0;
+          transform: scale(0.8);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        100% {
+          opacity: 0;
+          transform: scale(1.2);
+        }
+      }
+    </style>
+    <script>
+      setTimeout(() => {
+        window.location.href = "home.html";
+      }, 3000);
+    </script>
+  </head>
+  <body>
+    <div class="intro">GLAMORA</div>
+    <div class="slogan">Where elegance meets innovation</div>
+  </body>
+</html>
