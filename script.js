@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Carousel functionality
+  // Carousel functionaties
   const track = document.querySelector(".carousel-track");
   const slides = document.querySelectorAll(".carousel-slide");
   const nextButton = document.querySelector(".next-btn");
