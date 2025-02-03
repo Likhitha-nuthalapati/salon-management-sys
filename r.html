@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Slot</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f4f4f4;
+      }
+      .container {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        width: 300px;
+      }
+      h2 {
+        margin-bottom: 10px;
+      }
+      .info {
+        font-size: 12px;
+        color: gray;
+        margin-bottom: 20px;
+      }
+      .time-picker {
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+      }
+      select {
+        font-size: 16px;
+        padding: 5px;
+      }
+      button {
+        margin-top: 20px;
+        padding: 10px;
+        background: black;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background: darkgray;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>BOOK SLOT</h2>
+      <p class="info">Unfortunately, bookings are only possible for tomorrow</p>
+      <div class="time-picker">
+        <select id="hour"></select>
+        <select id="minute"></select>
+        <select id="ampm">
+          <option>AM</option>
+          <option>PM</option>
+        </select>
+      </div>
+      <button onclick="confirmBooking()">CONFIRM</button>
+    </div>
+
+    <script>
+      function populateTimeSelectors() {
+        let hourSelect = document.getElementById("hour");
+        let minuteSelect = document.getElementById("minute");
+
+        for (let i = 1; i <= 12; i++) {
+          let option = document.createElement("option");
+          option.textContent = i.toString().padStart(2, "0");
+          hourSelect.appendChild(option);
+        }
+
+        for (let i = 0; i < 60; i++) {
+          let option = document.createElement("option");
+          option.textContent = i.toString().padStart(2, "0");
+          minuteSelect.appendChild(option);
+        }
+      }
+
+      function confirmBooking() {
+        let hour = document.getElementById("hour").value;
+        let minute = document.getElementById("minute").value;
+        let ampm = document.getElementById("ampm").value;
+        alert(
+          `You have booked the slot for tomorrow at ${hour}:${minute} ${ampm}`
+        );
+      }
+
+      document.addEventListener("DOMContentLoaded", populateTimeSelectors);
+    </script>
+  </body>
+</html>
