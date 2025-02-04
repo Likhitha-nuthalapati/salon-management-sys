@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('photo.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .signup-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(15px);
+            text-align: center;
+            width: 400px;
+            position: relative;
+        }
+
+        /* Close button style */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            color: #fff;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .close-btn:hover {
+            color: #ff69b4;
+        }
+
+        .signup-container h2 {
+            color: #0e0d0d;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        .input-group {
+            position: relative;
+            margin: 20px 0;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 5px;
+            outline: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: rgb(0, 0, 0);
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .input-group input:focus {
+            border-color: #ff69b4;
+            box-shadow: 0 0 8px rgba(255, 105, 180, 0.8);
+        }
+
+        .input-group .icon {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #0f0f0f;
+            font-size: 18px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background: linear-gradient(45deg, #ff69b4, #c300ff);
+            color: #ffffff;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(45deg, #c300ff, #ff69b4);
+            filter: brightness(1.2);
+        }
+
+        p {
+            color: #080808;
+            margin-top: 15px;
+        }
+
+        p a {
+            color:#ff00d4;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        p a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <!-- Close button -->
+        <span class="close-btn" onclick="goBack()">&times;</span>
+        <h2>Sign Up</h2>
+        <form>
+            <div class="input-group">
+                <input type="text" placeholder="Username" required>
+                <span class="icon"><i class='bx bxs-user'></i></span>
+            </div>
+            <div class="input-group">
+                <input type="email" placeholder="Email" required>
+                <span class="icon"><i class='bx bxs-envelope'></i></span>
+            </div>
+            <div class="input-group">
+                <input type="password" placeholder="Password" required>
+                <span class="icon"><i class='bx bxs-lock-alt'></i></span>
+            </div>
+            <div class="input-group">
+                <input type="password" placeholder="Confirm Password" required>
+                <span class="icon"><i class='bx bxs-lock'></i></span>
+            </div>
+            <button type="submit">Sign Up</button>
+            <p>Have an account? <a href="login2.html">Login</a></p>
+        </form>
+    </div>
+
+    <script>
+        // Function to go back to the previous page
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
