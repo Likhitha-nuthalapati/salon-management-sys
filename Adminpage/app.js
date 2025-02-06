@@ -8,7 +8,8 @@ let state = {
   isAcceptingAppointments: true,
 };
 
-/function loadInitialData() {
+// Load initial data from localStorage
+function loadInitialData() {
   const savedState = localStorage.getItem("salonState");
   if (savedState) {
     state = JSON.parse(savedState);
@@ -19,65 +20,11 @@ let state = {
       { id: "s2", name: "Hair Color", price: 60, duration: 90 },
       { id: "s3", name: "Beard Trim", price: 20, duration: 20 },
     ];
-
     state.serviceSlots = [
       { id: "slot1", barber: "Alex", customer: null, status: "unoccupied" },
       { id: "slot2", barber: "Maria", customer: null, status: "unoccupied" },
       { id: "slot3", barber: "David", customer: null, status: "unoccupied" },
     ];
-
-    // Add test data for waiting list
-    state.waitingList = [
-      {
-        id: "w1",
-        name: "John Doe",
-        service: "Haircut",
-        timestamp: "10:00 AM",
-      },
-      {
-        id: "w2",
-        name: "Jane Smith",
-        service: "Hair Color",
-        timestamp: "10:15 AM",
-      },
-    ];
-
-    // Add test data for bookings
-    state.bookings = [
-      {
-        id: "b1",
-        customerName: "Alice Johnson",
-        serviceId: "s1",
-        date: "2023-10-15",
-        time: "11:00 AM",
-      },
-      {
-        id: "b2",
-        customerName: "Bob Brown",
-        serviceId: "s2",
-        date: "2023-10-15",
-        time: "02:00 PM",
-      },
-    ];
-
-    // Add test data for history
-    state.history = [
-      {
-        id: "h1",
-        customer: { name: "Charlie Davis", service: "Beard Trim" },
-        barber: "Alex",
-        date: "2023-10-14T09:30:00Z",
-        status: "completed",
-      },
-      {
-        id: "h2",
-        customer: { name: "Eva Green", service: "Hair Color" },
-        barber: "Maria",
-        date: "2023-10-14T11:00:00Z",
-        status: "completed",
-      },
-    ];
-
     saveState();
   }
   updateUI();
