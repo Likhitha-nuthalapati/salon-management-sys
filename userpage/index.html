@@ -29,9 +29,7 @@
         <div class="profile">
           <p class="profile_name">Signin</p>
           <div class="profile_pic">  <svg  xmlns="http://www.w3.org/2000/svg" height="20" width="17.5" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z"/></svg></div>
-        </div>
-        
-        
+        </div> 
       </div>
       <!-- Toggle Button for Small Screens -->
       <button class="nav-toggle" id="nav-toggle">
@@ -61,6 +59,16 @@
 </div>
    
 
+<div class="logout hidden">
+   <div class="popup">
+            <span class="close-btn" id="closePopup">&times;</span>
+            <img id="profilePic" src="https://via.placeholder.com/80" alt="Profile Picture">
+            <h2 id="profileName">John Doe</h2>
+            <p id="profileEmail">johndoe@example.com</p>
+            <button class="logout-btn" id="logoutBtn">Logout</button>
+    </div>
+</div>
+
     
       <!-- Hero Section -->
       <section class="hero">
@@ -68,7 +76,7 @@
           <h1>Welcome to SALON</h1>
           <p>Where Beauty Meets Excellence</p>
           <button class="btn-primary">
-            <a class="btn-primary" href="./login.html">Signin</a>
+            <a class="btn-primary" id="book_now" style="text-decoration: none;" href="./login.html">Signin</a>
           </button>
         </div>
       </section>
@@ -280,6 +288,7 @@
       <img src="./whatsapp_733585.png" width="100%" alt="" />
     </a>
 
-    <script src="script.js"></script>
+    <script  type="module" src="script.js"></script>
+    <script src="./logout.js"></script>
   </body>
 </html>

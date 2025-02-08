@@ -1,4 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
+  let dummy = JSON.parse(localStorage.getItem("user")) || null;
+  console.log(dummy);
+  const user_name = dummy.displayName;
+  const user_pic = dummy.photoURL;
+  const user_mail = dummy.email;
+
   // Carousel functionaties
   const track = document.querySelector(".carousel-track");
   const slides = document.querySelectorAll(".carousel-slide");
@@ -6,6 +12,46 @@ document.addEventListener("DOMContentLoaded", () => {
   const prevButton = document.querySelector(".prev-btn");
   const crossbtn = document.querySelector(".close");
   const hambtn = document.querySelector(".hamburger");
+  const profile_name = document.querySelector(".profile_name");
+  const profile_pic = document.querySelector(".profile_pic");
+  const book_now = document.getElementById("book_now");
+
+  // popup profile
+  const pop_profile = document.getElementById("profilePic");
+  const pop_name = document.getElementById("profileName");
+  const pop_email = document.getElementById("profileEmail");
+  const pop_close = document.getElementById("closePopup");
+  const logout_pop = document.querySelector(".logout");
+
+  profile_pic.addEventListener("click", () => {
+    logout_pop.classList.toggle("hidden");
+  });
+  pop_close.addEventListener("click", () => {
+    logout_pop.classList.toggle("hidden");
+  });
+
+  if (user_name) {
+    profile_name.textContent = user_name;
+    pop_name.textContent = user_name;
+    pop_email.textContent = user_mail;
+    pop_profile.src = user_pic;
+
+    const img = document.createElement("img");
+    img.src = user_pic; // Replace with your image URL
+    img.alt = "Profile Picture";
+    img.style.borderRadius = "50%"; // Optional: Make it round
+    img.width = 33; // Adjust size as needed
+    img.height = 33;
+    // Remove existing SVG inside profile_pic
+    profile_pic.innerHTML = "";
+    profile_pic.style.padding = "0";
+    profile_pic.style.border = "none";
+    book_now.textContent = "BOOK NOW";
+    book_now.href = "./services.html"; // Set the new URL
+
+    // Append the new image
+    profile_pic.appendChild(img);
+  }
 
   document.getElementById("nav-toggle").addEventListener("click", function () {
     document.getElementById("sidebar").classList.toggle("active");
@@ -101,6 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const appointment = document.querySelectorAll(".btn-primary");
   const closeButton = document.getElementById("closeButton");
   const actionButtons = document.querySelector(".action-button");
+  const service_grid = document.querySelector(".services-grid");
 
   const confirmButton = document.querySelectorAll(".confirmButton");
   confirmButton.forEach((btn) => {
@@ -126,6 +173,13 @@ document.addEventListener("DOMContentLoaded", () => {
       confirmationDialog.classList.add("hidden");
     }, 2000);
   };
+
+  service_grid.addEventListener("click", (event) => {
+    if (event.target.classList.contains("btn-primary")) {
+      console.log("Appointment button clicked!");
+      openDialog(); // Call your dialog function here
+    }
+  });
 
   //handling events
   appointment.forEach((btn) => {
@@ -248,3 +302,23 @@ function confirmTime() {
   console.log(`Selected time: ${timeString}`);
   bookcloseDialog();
 }
+
+fetch("http://localhost:5000/api/services")
+  .then((response) => response.json())
+  .then((data) => {
+    let servicesContainer = document.querySelector(".services-grid");
+    data.forEach((service) => {
+      servicesContainer.innerHTML += `
+        <div class="service-card">
+          <img src="${service.image}" alt="${service.title}">
+          <div class="service-content">
+            <h3>${service.title}</h3>
+            <p>${service.description}</p>
+            <p class="price" >${service.price}</p>
+            <button class="btn-primary">Appointment</button>
+          </div>  
+        </div>
+      `;
+    });
+  })
+  .catch((error) => console.error("Error fetching services:", error));

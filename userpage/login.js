@@ -55,6 +55,7 @@ signInBtn.addEventListener("click", () => {
       // The signed-in user info.
       const user = result.user;
       console.log(user);
+      localStorage.setItem("user", JSON.stringify(user));
       window.location.href = "./index.html";
       // IdP data available using getAdditionalUserInfo(result)
       // ...
@@ -65,4 +66,4 @@ signInBtn.addEventListener("click", () => {
       const errorMessage = error.message;
     });
 });
-S;
+// all good till this
