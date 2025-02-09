@@ -1,5 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Services - SALON</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Headerr -->
+    <header class="header">
+      <nav class="container">
+        <div class="nav-content">
+          <a href="/" class="logo">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="scissors-icon"
+            >
+              <circle cx="6" cy="6" r="3"></circle>
+              <circle cx="6" cy="18" r="3"></circle>
+              <line x1="20" y1="4" x2="8.12" y2="15.88"></line>
+              <line x1="14.47" y1="14.48" x2="20" y2="20"></line>
+              <line x1="8.12" y1="8.12" x2="12" y2="12"></line>
+            </svg>
+            <span>SALON</span>
+          </a>
+          <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="/products.html">Products</a>
+            <a href="./services.html" class="active">Services</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="services">
+        <div class="container">
+          <h1>Our Services</h1>
+          <div class="services-grid">
+            <div class="service-card">
+              <img
+                src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=800&q=80"
+                alt="Haircut & Styling"
+              />
+              <div class="service-content">
+                <h3>Haircut & Styling</h3>
+                <p>Professional cut and style tailored to your preferences</p>
+                <p class="price">$45+</p>
+                <button class="btn-primary">Appointment</button>
+              </div>
+            </div>
+            <div class="service-card">
+              <img
+                src="https://images.unsplash.com/photo-1487412912498-0447578fcca8?auto=format&fit=crop&w=800&q=80"
+                alt="Color & Highlights"
+              />
+              <div class="service-content">
+                <h3>Color & Highlights</h3>
+                <p>Full color, highlights, or balayage services</p>
+                <p class="price">$85+</p>
+                <button class="btn-primary">Appointment</button>
+              </div>
+            </div>
+            <div class="service-card">
+              <img
+                src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80"
+                alt="Hair Treatment"
+              />
+              <div class="service-content">
+                <h3>Hair Treatment</h3>
+                <p>Deep conditioning and specialized treatments</p>
+                <p class="price">$65+</p>
+                <button class="btn-primary">Appointment</button>
+              </div>
+            </div>
+            <div class="service-card">
+              <img
+                src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&w=800&q=80"
+                alt="Blowout"
+              />
+              <div class="service-content">
+                <h3>Blowout</h3>
+                <p>Professional blow dry and styling</p>
+                <p class="price">$35+</p>
+                <button class="btn-primary">Appointment</button>
+              </div>
+            </div>
+            <div class="service-card">
+              <img
+                src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=800&q=80"
+                alt="Extensions"
+              />
+              <div class="service-content">
+                <h3>Extensions</h3>
+                <p>Premium quality hair extensions</p>
+                <p class="price">$200+</p>
+                <button class="btn-primary" id="btn-primary">
+                  Appointment
+                </button>
+              </div>
+            </div>
+
+            <div class="service-card">
+              <img
+                src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=80"
+                alt="Men's Grooming"
+              />
+              <div class="service-content">
+                <h3>Men's Grooming</h3>
+                <p>Specialized men's cuts and grooming services</p>
+                <p class="price">$30+</p>
+                <button class="btn-primary">Appointment</button>
+              </div>
+            </div>
+            <div class="service-card">
+              <img
+                src="https://images.unsplash.com/photo-1533933269825-da140ad3132f?auto=format&fit=crop&w=800&q=80"
+                alt="Kids Haircut"
+              />
+              <div class="service-content">
+                <h3>Kids Haircut</h3>
+                <p>Gentle and fun haircuts for children</p>
+                <p class="price">$25+</p>
+                <button class="btn-primary">Appointment</button>
+              </div>
+            </div>
+          </div>
+          <!-- dialog -->
+          <div id="dialogOverlay" class="overlay hidden">
+            <div class="dialog">
+              <button id="closeButton" class="close-button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M18 6 6 18"></path>
+                  <path d="m6 6 12 12"></path>
+                </svg>
+              </button>
+
+              <div class="content">
+                <h2>Confirm appointment!</h2>
+                <div class="separator"></div>
+
+                <div class="appointment-details">
+                  <div class="number">05 WL</div>
+                  <div class="time">Approx call 5:30</div>
+                </div>
+
+                <div class="button-group">
+                  <button id="confirmButton" class="action-button">
+                    CONFIRM
+                  </button>
+                  <button class="action-button">BOOK SLOT</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- slotbooking -->
+
+          <!-- confirmation -->
+          <div id="confirmationDialog" class="overlay hidden">
+            <div class="confirmation-dialog">
+              <div class="checkmark-circle">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <div class="confirmation-text">APPOINTMENT CONFIRMED</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- WhatsApp Button -->
+    <a
+      href="https://wa.me/7095658244"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="whatsapp-button"
+    >
+      <img src="./whatsapp_733585.png" width="100%" alt="" />
+    </a>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+=======
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -382,3 +596,4 @@
     </script>
 </body>
 </html>
+>>>>>>> Anusha
